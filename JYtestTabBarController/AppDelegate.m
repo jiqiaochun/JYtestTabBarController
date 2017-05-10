@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "JYInitViewController.h"
+#import "UIWindow+Exension.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+//    // 创建根控制器(JYInitViewController)
+//    JYInitViewController *mainVc = [[JYInitViewController alloc] init];
+//
+//    [self.window setRootViewController:mainVc.viewController];
+    
+    [self.window switchRootViewController];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
